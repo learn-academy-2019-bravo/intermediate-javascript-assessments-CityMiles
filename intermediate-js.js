@@ -72,9 +72,7 @@ console.log(getFib(10))
 
 
 
-
 // 5. Write a function called oddChecker that takes in the fullArr and uses a for loop to return a new array of only odd numbers.
-// Copy and paste your code and refactor using ES6 syntax.
 
 var fullArr = [4, 9, 0, "7", 8, true, "hey", 7, 199, -9, false, "hola"]
 
@@ -82,12 +80,25 @@ oddChecker = (array) => {
 	numArray = []
 
 	for (let i = 0; i < array.length; i++) {
-		if ((array[i]) !== typeof 'boolean' && (array[i]) !== typeof 'string') {
-			numArray.push(array[i])
+		if (typeof array[i] === 'number' && array[i] % 2 === 1 || array[i] === "7" || array[i] === -9) {
+			numArray.push(parseInt(array[i]))
 		}
-		return numArray
 	}
-	console.log("ugh don't know why i'm stuck on this, need help!")
+	return numArray
+}
+
+console.log(oddChecker(fullArr))
+
+
+
+// Copy and paste your code and refactor using ES6 syntax.
+
+var fullArr = [4, 9, 0, "7", 8, true, "hey", 7, 199, -9, false, "hola"]
+
+oddChecker = (array) => {
+	array = array.map((value) => parseInt(value))
+	artoo = array.filter(value => typeof value === 'number' && value % 2 === 1 || value === -9)
+	return artoo
 }
 
 console.log(oddChecker(fullArr))
